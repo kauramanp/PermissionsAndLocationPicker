@@ -175,7 +175,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun updateMarker() {
         mCenterMarker?.position = userLocation
         map?.animateCamera(CameraUpdateFactory.newLatLng(userLocation))
-        binding.tvFrom.setText(MapFunctions.getLocationName(this, userLocation))
+        binding.tvFrom.text = MapFunctions.getLocationName(this, userLocation)
     }
 
     override fun onMapReady(map: GoogleMap) {
@@ -184,6 +184,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             MarkerOptions()
                 .position(userLocation)
         )
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
 
         map.setOnCameraIdleListener{
             userLocation = map.cameraPosition.target
