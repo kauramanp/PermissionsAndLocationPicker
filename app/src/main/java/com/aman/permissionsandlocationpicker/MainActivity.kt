@@ -128,12 +128,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         Log.e(TAG, "getLastLocation:  ${isLocationEnabled()} ")
         if (isLocationEnabled()) {
             Log.e(TAG, "getLastLocation: isLocationEnabled ${isLocationEnabled()}")
-
-            // getting last
-            // location from
-            // FusedLocationClient
-            // object
-
             mFusedLocationClient.lastLocation.addOnCompleteListener { task ->
                 val location: Location = task.result
                 if (location == null) {
@@ -180,7 +174,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun updateMarker() {
         mCenterMarker?.position = userLocation
-        map?.animateCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
+        map?.animateCamera(CameraUpdateFactory.newLatLng(userLocation))
+        binding.tvFrom.setText(MapFunctions.getLocationName(this, userLocation))
     }
 
     override fun onMapReady(map: GoogleMap) {
