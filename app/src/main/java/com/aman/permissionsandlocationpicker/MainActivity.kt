@@ -50,8 +50,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private val locationPermission = arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,
         android.Manifest.permission.ACCESS_COARSE_LOCATION)
-
-
+    
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
