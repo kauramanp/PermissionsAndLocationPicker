@@ -16,7 +16,7 @@ This project demonstrates how to:
 - Android Studio **Chipmunk** or later.
 - Kotlin **1.5** or later.
 - Google Play Services installed on the target device.
-- Minimum SDK **21** (Android 5.0 Lollipop).
+- Minimum SDK **26** (Android 8.0 Oreo).
 
 ---
 
