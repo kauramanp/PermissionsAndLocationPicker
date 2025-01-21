@@ -1,4 +1,4 @@
-# PermissionsAndLocationPicker
+# Permissions And Location Picker
 This project demonstrates how to:
 - Request runtime permissions for accessing the user's location.
 - Retrieve the user's current location using the `FusedLocationProviderClient`.
